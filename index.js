@@ -5,7 +5,7 @@ const app = express();
 const port = 3000;
 app.use(cors());
 app.use(express.json());
-mongoose.connect('yourconnectionstring',{
+mongoose.connect('YOUR_MONGODB_URI',{
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
