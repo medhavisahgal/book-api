@@ -5,7 +5,7 @@ const app = express();
 const port = 3000;
 app.use(cors());
 app.use(express.json());
-mongoose.connect('mongodb+srv://medhavi12:Medhavi%402004@cluster0.svkiwe9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',{
+mongoose.connect('yourconnectionstring',{
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
