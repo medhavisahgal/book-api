@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
 });
 if (require.main === module) {
   const connectDB = require('./db');
-  connectDB('mongodb+srv://medhavi12:Medhavi%402004@cluster0.svkiwe9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+  connectDB('YOUR_MONGODB_URI')
     .then(() => {
       app.listen(port,()=>{
         console.log(`Server is running on http://localhost:${port}`);
