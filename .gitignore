@@ -15,3 +15,15 @@ Thumbs.db
 # IDE/editor settings
 .vscode/
 .idea/
+
+# Test coverage output (Jest)
+coverage/
+
+# Jest cache
+jest-cache/
+jest-test-results.json
+
+# Supertest-related temporary files (rare, but safe to include if using temp files)
+tmp/
+
+
