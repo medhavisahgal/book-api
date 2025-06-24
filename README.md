@@ -23,7 +23,7 @@ book-api/
 │   └── Book.js
 ├── routes/
 │   └── books.js
-├── public/
+├── frontend/
 │   ├── index.html
 │   ├── style.css
 │   └── script.js
