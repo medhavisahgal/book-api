@@ -87,6 +87,14 @@ Open `public/index.html` directly in your browser or use the **Live Server** ext
 
 This project includes complete test coverage using **Jest** and **Supertest**.
 
+### ✅ Test Output (Terminal)
+![Test Results](./assets/test-results.png)
+
+### 📊 Code Coverage Report
+![Coverage Report](./assets/coverage-report.png)
+
+### 🧾 HTML Test Report
+![HTML Report](./assets/html-test-report1.png)
 ### 🧪 Test Types:
 
 * **Unit Tests** (`tests/unit/bookModel.test.js`)
