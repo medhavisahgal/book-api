@@ -10,12 +10,14 @@ A simple full-stack Book Management application built with **Node.js**, **Expres
 - 🧾 **Bulk insert support**  
 - 🎨 **Simple UI** for managing books  
 - 🔧 **RESTful API** with clear structure  
+- 🧪 **Comprehensive Testing** (unit, integration, and API)
 
 ---
 
 ## 📁 Folder Structure
 
 ```
+
 book-api/
 ├── models/
 │   └── Book.js
@@ -25,22 +27,32 @@ book-api/
 │   ├── index.html
 │   ├── style.css
 │   └── script.js
+├── tests/
+│   ├── unit/
+│   │   └── bookModel.test.js
+│   ├── integration/
+│   │   └── booksRoutes.test.js
+│   └── api/
+│       └── booksApi.test.js
 ├── index.js
 ├── package.json
 ├── .gitignore
 ├── README.md
 └── docs/
-    └── API.md
-```
+└── API.md
+
+````
+
+---
 
 ## 🔧 Setup Instructions
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/book-api.git
+git clone https://github.com/medhavisahgal/book-api.git
 cd book-api
-```
+````
 
 ### 2. Install Dependencies
 
@@ -50,14 +62,12 @@ npm install
 
 ### 3. Configure MongoDB Connection
 
-In `index.js`, replace: with your actual MongoDB URI. 
+In `index.js`, replace the MongoDB URI placeholder with your actual URI.
 Make sure your IP is whitelisted in MongoDB Atlas.
 
 ```js
 mongoose.connect('YOUR_MONGODB_URI', { ... });
 ```
-
-
 
 ### 4. Run the Backend Server
 
@@ -73,6 +83,36 @@ Open `public/index.html` directly in your browser or use the **Live Server** ext
 
 ---
 
+## 🧪 Testing
+
+This project includes complete test coverage using **Jest** and **Supertest**.
+
+### 🧪 Test Types:
+
+* **Unit Tests** (`tests/unit/bookModel.test.js`)
+  Test the Book schema/model functionality in isolation.
+
+* **Integration Tests** (`tests/integration/booksRoutes.test.js`)
+  Test the Express route handlers and their interaction with the database.
+
+* **API Tests** (`tests/api/booksApi.test.js`)
+  End-to-end testing of the RESTful API using HTTP assertions.
+
+### 🧪 Run All Tests:
+
+```bash
+npm test
+```
+
+---
+
 ## 📖 API Documentation
 
-Complete API documentation is available in: `docs/API.md`
+Full API reference with request/response samples is available in [`docs/API.md`](docs/API.md).
+
+---
+
+## 🙋 Author
+
+Created by **Medhavi Sahgal**
+
