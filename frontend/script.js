@@ -8,13 +8,11 @@ const yearInput = document.getElementById('year');
 let editingId = null;
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
-
   const book = {
     title: titleInput.value,
     author: authorInput.value,
     year: yearInput.value
   };
-
   if (editingId) {
     await fetch(`${apiUrl}/${editingId}`, {
       method: 'PUT',
