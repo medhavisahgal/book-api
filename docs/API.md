@@ -10,7 +10,6 @@ This is the documentation for the custom Book Manager API that allows clients to
 ## 📖 Endpoints
 
 ### 1. 🔍 Get All Books
-
 - **Method**: `GET`
 - **Endpoint**: `/api/books`
 - **Description**: Fetch all books from the database.
@@ -25,14 +24,16 @@ This is the documentation for the custom Book Manager API that allows clients to
     "year": 1937
   }
 ]
-```
+````
+
 ### 2. ➕ Add a New Book
 
-- **Method**: `POST`
-- **Endpoint**: `/api/books`
-- **Description**: Add a new book to the database.
+* **Method**: `POST`
+* **Endpoint**: `/api/books`
+* **Description**: Add a new book to the database.
 
 #### Request Body:
+
 ```json
 {
   "title": "The Alchemist",
@@ -42,6 +43,7 @@ This is the documentation for the custom Book Manager API that allows clients to
 ```
 
 #### ✅ Sample Response:
+
 ```json
 {
   "_id": "60df3d3a2f8fb814c8d5a456",
@@ -55,12 +57,13 @@ This is the documentation for the custom Book Manager API that allows clients to
 
 ### 3. 🛠️ Update a Book
 
-- **Method**: `PUT`
-- **Endpoint**: `/api/books/:id`
-- **Description**: Update the information of an existing book.
-- **Request Params**: `id` – The ID of the book to update.
+* **Method**: `PUT`
+* **Endpoint**: `/api/books/:id`
+* **Description**: Update the information of an existing book.
+* **Request Params**: `id` – The ID of the book to update.
 
 #### Request Body:
+
 ```json
 {
   "title": "The Alchemist (Updated)",
@@ -70,6 +73,7 @@ This is the documentation for the custom Book Manager API that allows clients to
 ```
 
 #### ✅ Sample Response:
+
 ```json
 {
   "_id": "60df3d3a2f8fb814c8d5a456",
@@ -83,12 +87,13 @@ This is the documentation for the custom Book Manager API that allows clients to
 
 ### 4. 🗑️ Delete a Book
 
-- **Method**: `DELETE`
-- **Endpoint**: `/api/books/:id`
-- **Description**: Delete a book by ID.
-- **Request Params**: `id` – The ID of the book to delete.
+* **Method**: `DELETE`
+* **Endpoint**: `/api/books/:id`
+* **Description**: Delete a book by ID.
+* **Request Params**: `id` – The ID of the book to delete.
 
 #### ✅ Sample Response:
+
 ```json
 {
   "message": "Book deleted successfully"
@@ -99,11 +104,12 @@ This is the documentation for the custom Book Manager API that allows clients to
 
 ### 5. 📥 Bulk Insert Books
 
-- **Method**: `POST`
-- **Endpoint**: `/api/books/bulk`
-- **Description**: Add multiple books at once.
+* **Method**: `POST`
+* **Endpoint**: `/api/books/bulk`
+* **Description**: Add multiple books at once.
 
 #### Request Body:
+
 ```json
 [
   {
@@ -120,6 +126,7 @@ This is the documentation for the custom Book Manager API that allows clients to
 ```
 
 #### ✅ Sample Response:
+
 ```json
 [
   {
@@ -141,26 +148,38 @@ This is the documentation for the custom Book Manager API that allows clients to
 
 ## ⚠️ Error Responses
 
-- `400 Bad Request`: Invalid input
-- `404 Not Found`: Book not found
-- `500 Internal Server Error`: Server/database error
+* `400 Bad Request`: Invalid input
+* `404 Not Found`: Book not found
+* `500 Internal Server Error`: Server/database error
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Backend**: Node.js + Express
-- **Database**: MongoDB Atlas
-- **ODM**: Mongoose
+* **Backend**: Node.js + Express
+* **Database**: MongoDB Atlas
+* **ODM**: Mongoose
 
 ---
 
 ## 🧪 Testing
 
-Use tools like:
-- Postman
-- `curl` in your terminal
-- Your custom frontend
+This project includes robust testing using:
+
+* ✅ **Unit Testing** – for individual components and services
+* ✅ **Integration Testing** – verifying how modules work together
+* ✅ **API Testing** – end-to-end testing of all API endpoints
+
+### 🔧 Tools Used:
+
+* **[Jest](https://jestjs.io/)** – JavaScript Testing Framework
+* **[Supertest](https://github.com/visionmedia/supertest)** – HTTP assertions for API endpoints
+
+To run the test suite:
+
+```bash
+npm test
+```
 
 ---
 
