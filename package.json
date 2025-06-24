@@ -25,7 +25,17 @@
   },
   "devDependencies": {
     "jest": "^30.0.2",
+    "jest-html-reporter": "^4.2.0",
     "mongodb-memory-server": "^10.1.4",
     "supertest": "^7.1.1"
-  }
+  },
+  "jest": {
+  "reporters": [
+    "default",
+    ["jest-html-reporter", {
+      "pageTitle": "Test Report",
+      "outputPath": "./test-report.html"
+    }]
+  ]
+ }
 }
