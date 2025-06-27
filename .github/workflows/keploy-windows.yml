@@ -1,4 +1,4 @@
-name: Keploy API Testing (Windows)
+name: Keploy API Testing 
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   keploy-test:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
@@ -22,10 +22,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Download Keploy
+      - name: Download Keploy CLI
         run: |
-          Invoke-WebRequest -Uri "https://github.com/keploy/keploy/releases/latest/download/keploy.exe" -OutFile "keploy.exe"
+          curl -sSfL https://github.com/keploy/keploy/releases/latest/download/keploy-linux-amd64 -o keploy
+          chmod +x keploy
+          ./keploy version
 
-      - name: Run Keploy Test
+      - name: Run Keploy Tests
         run: |
-          ./keploy.exe test --command="npm start"
+          ./keploy test --command="npm start"
