@@ -1,0 +1,33 @@
+name: Keploy API Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  keploy-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Download Keploy CLI
+      run: |
+        curl -sSfL https://github.com/keploy/keploy/releases/latest/download/keploy-linux-amd64 -o keploy
+        chmod +x keploy
+        ./keploy version
+
+    - name: Run Keploy Test
+      run: |
+        ./keploy test --command="npm start"
