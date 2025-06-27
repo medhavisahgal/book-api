@@ -105,6 +105,14 @@ This project includes complete test coverage using **Jest** and **Supertest**.
 
 * **API Tests** (`tests/api/booksApi.test.js`)
   End-to-end testing of the RESTful API using HTTP assertions.
+  
+## 🧪 Keploy API Testing
+
+This project was tested using the **[Keploy](https://keploy.io/)** platform to simulate and validate API calls.
+
+### ✅ Keploy API Test Report
+
+![Keploy Test Dashboard](./assets/keploy-api-testing.png)
 
 ### 🧪 Run All Tests:
 
