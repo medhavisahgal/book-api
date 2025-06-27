@@ -1,0 +1,31 @@
+name: Keploy API Testing (Windows)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  keploy-test:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Download Keploy
+        run: |
+          Invoke-WebRequest -Uri "https://github.com/keploy/keploy/releases/latest/download/keploy.exe" -OutFile "keploy.exe"
+
+      - name: Run Keploy Test
+        run: |
+          ./keploy.exe test --command="npm start"
