@@ -21,7 +21,9 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^5.1.0",
-    "mongoose": "^8.16.0"
+    "mongoose": "^8.16.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "jest": "^30.0.2",
@@ -30,12 +32,15 @@
     "supertest": "^7.1.1"
   },
   "jest": {
-  "reporters": [
-    "default",
-    ["jest-html-reporter", {
-      "pageTitle": "Test Report",
-      "outputPath": "./test-report.html"
-    }]
-  ]
- }
+    "reporters": [
+      "default",
+      [
+        "jest-html-reporter",
+        {
+          "pageTitle": "Test Report",
+          "outputPath": "./test-report.html"
+        }
+      ]
+    ]
+  }
 }
