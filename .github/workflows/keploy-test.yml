@@ -11,23 +11,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Download Keploy CLI
-      run: |
-        curl -sSfL https://github.com/keploy/keploy/releases/latest/download/keploy-linux-amd64 -o keploy
-        chmod +x keploy
-        ./keploy version
+      - name: Install Keploy CLI
+        run: |
+          curl --silent -L https://keploy.io/ent/install.sh | bash
 
-    - name: Run Keploy Test
-      run: |
-        ./keploy test --command="npm start"
+      - name: Run Keploy Test Suite
+        env:
+          KEPLOY_API_KEY: ${{ secrets.KEPLOY_API_KEY }}
+        run: |
+          keploy test --command="npm start"
