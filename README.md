@@ -60,14 +60,39 @@ cd book-api
 npm install
 ```
 
-### 3. Configure MongoDB Connection
+Here's the section written in Markdown format for your README:
 
-In `index.js`, replace the MongoDB URI placeholder with your actual URI.
-Make sure your IP is whitelisted in MongoDB Atlas.
+---
+
+### 3. Configure MongoDB Connection (Using Environment Variable)
+
+Create a `.env` file in the project root:
+
+```env
+MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/<your-database-name>?retryWrites=true&w=majority
+```
+
+> 🔒 **Important:** Do **NOT** commit this file to GitHub. Ensure it is listed in your `.gitignore`.
+
+In `index.js`, load the environment variables by adding:
 
 ```js
-mongoose.connect('YOUR_MONGODB_URI', { ... });
+require('dotenv').config();
 ```
+
+Then connect to MongoDB using:
+
+```js
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+```
+
+> ✅ **Note:** Make sure your IP address is whitelisted in [MongoDB Atlas](https://cloud.mongodb.com/).
+
+---
+
 
 ### 4. Run the Backend Server
 
