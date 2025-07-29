@@ -1,4 +1,4 @@
-name: Keploy API Testing 
+name: Keploy API Testing
 
 on:
   push:
@@ -22,12 +22,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Download Keploy CLI
+      - name: Install Keploy CLI
         run: |
-          curl -sSfL https://github.com/keploy/keploy/releases/latest/download/keploy-linux-amd64 -o keploy
-          chmod +x keploy
-          ./keploy version
+          curl --silent -L https://keploy.io/ent/install.sh | bash
 
       - name: Run Keploy Tests
+        env:
+          KEPLOY_API_KEY: ${{ secrets.KEPLOY_API_KEY }}
         run: |
-          ./keploy test --command="npm start"
+          keploy test --command="npm start" --in-ci --delay 5 --app=YOUR_APP_ID --base-path=http://localhost:3000
