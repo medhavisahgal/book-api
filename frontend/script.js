@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:3000/api/books';
+const apiUrl = 'https://book-api-2lxt.onrender.com/api/books';
 const form = document.getElementById('bookForm');
 const bookList = document.getElementById('bookList');
 const bookDetails = document.getElementById('bookDetails');
