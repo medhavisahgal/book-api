@@ -18,8 +18,9 @@ app.get("/", (req, res) => {
 });
 
 if (require.main === module) {
+  require('dotenv').config();
   const connectDB = require('./db');
-  connectDB('URL_TO_YOUR_MONGODB')
+  connectDB(process.env.MONGODB_URI)
     .then(() => {
       app.listen(port, () => {
         console.log(`Server is running on http://localhost:${port}`);
